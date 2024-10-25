@@ -17,6 +17,20 @@ export const withValibot = <Schema extends GenericValibotObject, OutputData>(
 		// TODO: is there a better way to parse the FormData object?
 		let parsedObject: any = {};
 		for (const key of data.keys()) {
+			// Check if expected key is an array
+			const isArray = schema.entries?.[key]?.expects === 'Array';
+			if (isArray) {
+				parsedObject[key] = [];
+				for (const value of data.getAll(key)) {
+					try {
+						parsedObject[key].push(JSON.parse(value as string));
+					} catch (error) {
+						parsedObject[key].push(value);
+					}
+				}
+				continue;
+			}
+
 			const value = data.get(key);
 			if (value instanceof File) {
 				parsedObject[key] = value;

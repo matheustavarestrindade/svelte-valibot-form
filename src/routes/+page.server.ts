@@ -3,7 +3,8 @@ import { LoginSchema } from '$lib/schema/LoginSchema.js';
 import type { Actions } from './$types.js';
 
 export const actions: Actions = {
-	test: withValibot(LoginSchema, async ({ data, request }) => {
-
+	login: withValibot(LoginSchema, async ({ data, request }) => {
+        console.log(request);
+        console.log(data);
     })
 };

@@ -1,5 +1,5 @@
 import { default as ValibotForm } from './components/ValibotForm.svelte';
-import ValibotAction from './request/Submit.js';
+import ValibotAction from './request/ValibotAction.js';
 import { withValibot } from './request/WithSchema.js';
 import type { ValibotErrorContext, ValibotErrorKey } from './types.js';
 

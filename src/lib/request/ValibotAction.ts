@@ -33,6 +33,20 @@ class ValibotAction {
 		for (const key in data) {
 			const value = data[key];
 			if (value === undefined || value === null) continue;
+
+			/* HANDLE FILE UPLOAD */
+			if (value instanceof File) {
+				formData.append(key, value as File);
+				continue;
+			} else if (Array.isArray(value) && value.length > 0) {
+				for (const item of value) {
+					if (item instanceof File) {
+                        formData.append(key, item);}
+				}
+				continue;
+			}
+			/* END HANDLE FILE UPLOAD */
+
 			if (typeof value === 'object') formData.append(key, JSON.stringify(value));
 			else formData.append(key, value.toString());
 		}

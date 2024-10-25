@@ -6,12 +6,12 @@
 	"author": "Matheus Tavares",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/yourusername/svelte-valibot-form.git"
+		"url": "https://github.com/matheustavarestrindade/svelte-valibot-form"
 	},
 	"license": "MIT",
-	"homepage": "https://github.com/yourusername/svelte-valibot-form#readme",
+	"homepage": "https://github.com/matheustavarestrindade/svelte-valibot-form",
 	"bugs": {
-		"url": "https://github.com/yourusername/svelte-valibot-form/issues"
+		"url": "https://github.com/matheustavarestrindade/svelte-valibot-form/issues"
 	},
 	"scripts": {
 		"dev": "vite dev",
@@ -54,7 +54,7 @@
 	"type": "module",
 	"dependencies": {
 		"@valibot/valibot": "npm:@jsr/valibot__valibot@^1.0.0-beta.1",
-		"svelte": "^5.1.3",
-		"@sveltejs/kit": "^2.7.3",
+        "@sveltejs/kit": "^2.7.3",
+		"svelte": "^5.1.3"
 	}
 }
