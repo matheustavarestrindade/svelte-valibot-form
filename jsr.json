@@ -1,0 +1,5 @@
+{
+	"name": "@trindade/svelte-valibot-form",
+	"version": "0.1.0",
+	"exports": "./src/lib/index.ts"
+}
