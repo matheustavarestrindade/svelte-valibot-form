@@ -22,13 +22,13 @@ This library provides reusable form components, context-aware validation, and er
 Install the library using npm:
 
 ```bash
-npm install @trindade/svelte-valibot-form
+npm install svelte-valibot-form
 ```
 
 Make sure to install its dependencies:
 
 ```bash
-npm install @valibot/valibot
+npm install valibot
 ```
 
 ## Usage
