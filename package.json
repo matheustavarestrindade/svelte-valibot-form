@@ -1,6 +1,6 @@
 {
 	"name": "svelte-valibot-form",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "A Svelte form validation library using Valibot.",
 	"keywords": [
 		"svelte",
@@ -45,22 +45,22 @@
 		"!dist/**/*.spec.*"
 	],
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"publint": "^0.2.0",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.11"
+		"@sveltejs/adapter-auto": "^3.3.1",
+		"@sveltejs/package": "^2.3.7",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-svelte": "^3.2.8",
+		"publint": "^0.2.12",
+		"svelte-check": "^4.0.7",
+		"typescript": "^5.6.3",
+		"vite": "^5.4.11"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/kit": "^2.7.3",
-		"svelte": "^5.1.3",
-		"valibot": "^0.42.1"
+		"@sveltejs/kit": "^2.8.0",
+		"svelte": "^5.1.15",
+		"valibot": "^1.0.0-beta.3"
 	}
 }
