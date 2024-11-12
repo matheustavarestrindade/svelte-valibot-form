@@ -1,7 +1,7 @@
 import type { GenericValibotObject, PartialSchemaError } from '$lib/types.js';
 import { convertIssuesToErrorMap } from '$lib/utils/ErrorUtils.js';
 import type { RequestEvent } from '@sveltejs/kit';
-import { safeParse, type InferIssue, type InferOutput } from '@valibot/valibot';
+import { safeParse, type InferIssue, type InferOutput } from 'valibot';
 
 type ContentType<Schema extends GenericValibotObject> = RequestEvent & { data: InferOutput<Schema> };
 

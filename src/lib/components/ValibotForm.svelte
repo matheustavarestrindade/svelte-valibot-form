@@ -1,6 +1,6 @@
 <script lang="ts" generics="Schema extends GenericValibotObject">
 	import type { SvelteHTMLElements } from 'svelte/elements';
-	import * as v from '@valibot/valibot';
+	import * as v from 'valibot';
 	import { setContext } from 'svelte';
 	import { convertIssuesToErrorMap } from '$lib/utils/ErrorUtils.js';
 	import type { GenericValibotObject } from '$lib/types.js';

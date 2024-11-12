@@ -1,4 +1,4 @@
-import type { ErrorMessage, InferInput, InferOutput, ObjectEntries, ObjectIssue, ObjectSchema } from '@valibot/valibot';
+import type { ErrorMessage, InferInput, InferOutput, ObjectEntries, ObjectIssue, ObjectSchema } from 'valibot';
 
 export type GenericValibotObject = ObjectSchema<ObjectEntries, ErrorMessage<ObjectIssue> | undefined>;
 

@@ -4,7 +4,7 @@
 	import ValibotForm from '$lib/components/ValibotForm.svelte';
 	import { ValibotAction } from '$lib/index.js';
 	import { LoginSchema, type LoginSchemaType } from '$lib/schema/LoginSchema.js';
-	import type { InferOutput } from '@valibot/valibot';
+	import type { InferOutput } from 'valibot';
 
 	const login = async (data: InferOutput<LoginSchemaType>) => await ValibotAction.call('login', LoginSchema, data);
 </script>

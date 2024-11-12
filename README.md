@@ -45,7 +45,7 @@ To create a form that validates data based on a schema, import `ValibotForm` and
 	import ValibotForm from '$lib/components/ValibotForm.svelte';
 	import { ValibotAction } from '$lib/index.js';
 	import { LoginSchema, type LoginSchemaType } from '$lib/schema/LoginSchema.js';
-	import type { InferOutput } from '@valibot/valibot';
+	import type { InferOutput } from 'valibot';
 
 	const login = async (data: InferOutput<LoginSchemaType>) => await ValibotAction.call('login', LoginSchema, data);
 </script>
@@ -188,7 +188,7 @@ Here’s a complete example to illustrate the library’s usage.
 	import GenericInput from '$lib/components/GenericInput.svelte';
 	import { LoginSchema, type LoginSchemaType } from '$lib/schema/LoginSchema.js';
 	import { ValibotAction } from '$lib/index.js';
-	import type { InferOutput } from '@valibot/valibot';
+	import type { InferOutput } from 'valibot';
 
 	const login = async (data: InferOutput<LoginSchemaType>) => await ValibotAction.call('login', LoginSchema, data);
 </script>
@@ -216,7 +216,7 @@ In a form component, `ValibotAction.call` can be used to validate and send form 
 ```typescript
 import { ValibotAction } from '$lib/index.js';
 import { LoginSchema, type LoginSchemaType } from '$lib/schema/LoginSchema.js';
-import type { InferOutput } from '@valibot/valibot';
+import type { InferOutput } from 'valibot';
 
 const login = async (data: InferOutput<LoginSchemaType>) => await ValibotAction.call('login', LoginSchema, data);
 ```

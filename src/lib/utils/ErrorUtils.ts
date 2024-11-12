@@ -1,5 +1,5 @@
 import type { GenericValibotObject, PartialSchemaError } from '$lib/types.js';
-import type { GenericIssue, InferInput } from '@valibot/valibot';
+import type { GenericIssue, InferInput } from 'valibot';
 
 export const convertIssuesToErrorMap = <Schema extends GenericValibotObject>(issues: GenericIssue[]): PartialSchemaError<Schema> => {
 	const errors: PartialSchemaError<Schema> = {};

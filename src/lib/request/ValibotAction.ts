@@ -2,7 +2,7 @@ import { applyAction, deserialize } from '$app/forms';
 import { invalidateAll } from '$app/navigation';
 import type { GenericValibotObject } from '$lib/types.js';
 import { convertIssuesToErrorMap } from '$lib/utils/ErrorUtils.js';
-import { safeParse, type InferInput } from '@valibot/valibot';
+import { safeParse, type InferInput } from 'valibot';
 
 const defaultOptions = { invalidate: true };
 type ActionOptions = { invalidate: boolean };
