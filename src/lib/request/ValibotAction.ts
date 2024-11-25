@@ -43,7 +43,10 @@ class ValibotAction {
 				const hasFiles = value.some((item) => item instanceof File);
 
 				if (!hasFiles) {
-					formData.append(key, JSON.stringify(value));
+					for (const item of value) {
+						if (typeof item === 'object') formData.append(key, JSON.stringify(item));
+						else formData.append(key, item.toString());
+					}
 					continue;
 				}
 
