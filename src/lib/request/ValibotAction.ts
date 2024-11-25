@@ -34,15 +34,27 @@ class ValibotAction {
 			const value = data[key];
 			if (value === undefined || value === null) continue;
 
-			/* HANDLE FILE UPLOAD */
 			if (value instanceof File) {
 				formData.append(key, value as File);
 				continue;
-			} else if (Array.isArray(value) && value.length > 0) {
+			}
+
+			if (Array.isArray(value) && value.length > 0) {
+				const hasFiles = value.some((item) => item instanceof File);
+
+				if (!hasFiles) {
+					formData.append(key, JSON.stringify(value));
+					continue;
+				}
+
 				for (const item of value) {
 					if (item instanceof File) {
-                        formData.append(key, item);}
+						formData.append(key, item);
+						continue;
+					} else if (typeof value === 'object') formData.append(key, JSON.stringify(value));
+					else formData.append(key, value);
 				}
+
 				continue;
 			}
 			/* END HANDLE FILE UPLOAD */
