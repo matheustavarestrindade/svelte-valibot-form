@@ -36,11 +36,13 @@ export const withValibot = <Schema extends GenericValibotObject, OutputData>(
 				parsedObject[key] = value;
 				continue;
 			}
-			try {
-				parsedObject[key] = JSON.parse(value as string);
-			} catch (error) {
-				parsedObject[key] = value;
+
+			const validation = isValidJson(value as string);
+			if (validation.valid) {
+				parsedObject[key] = validation.json;
+				continue;
 			}
+			parsedObject[key] = value;
 		}
 
 		const result = safeParse(schema, parsedObject);
@@ -49,3 +51,15 @@ export const withValibot = <Schema extends GenericValibotObject, OutputData>(
 		return await callback({ data: result.output, ...event });
 	};
 };
+
+function isValidJson(str: string) {
+	try {
+		var json = JSON.parse(str);
+		return {
+			valid: typeof json === 'object',
+			json
+		};
+	} catch (e) {
+		return { valid: false };
+	}
+}
