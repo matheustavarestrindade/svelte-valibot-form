@@ -44,7 +44,8 @@ class ValibotAction {
 
 				if (!hasFiles) {
 					for (const item of value) {
-						if (typeof item === 'object') formData.append(key, JSON.stringify(item));
+						if (item instanceof Date) formData.append(key, item.toISOString());
+						else if (typeof item === 'object') formData.append(key, JSON.stringify(item));
 						else formData.append(key, item.toString());
 					}
 					continue;
@@ -54,7 +55,8 @@ class ValibotAction {
 					if (item instanceof File) {
 						formData.append(key, item);
 						continue;
-					} else if (typeof value === 'object') formData.append(key, JSON.stringify(value));
+					} else if (item instanceof Date) formData.append(key, item.toISOString());
+					else if (typeof value === 'object') formData.append(key, JSON.stringify(value));
 					else formData.append(key, value);
 				}
 
@@ -62,16 +64,13 @@ class ValibotAction {
 			}
 			/* END HANDLE FILE UPLOAD */
 
-			if (typeof value === 'object') formData.append(key, JSON.stringify(value));
+			if (value instanceof Date) formData.append(key, value.toISOString());
+			else if (typeof value === 'object') formData.append(key, JSON.stringify(value));
 			else formData.append(key, value.toString());
 		}
 
 		return await actionFetch(action, formData, options);
 	}
-
-	// static async invoke(action: string, options: ActionOptions = defaultOptions) {
-	// 	return await actionFetch(action, new FormData(), options);
-	// }
 }
 
 export default ValibotAction;
